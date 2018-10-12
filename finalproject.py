@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from database_setup import Base, Restaurant, MenuItem
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -12,36 +12,36 @@ session = DBSession()
 @app.route('/')
 @app.route('/restaurants')
 def showRestaurants():
-    return "This is Index Page."
+    return render_template('restaurants.html')
 
 @app.route('/restaurant/new')
 def newRestaurant():
-    return "Add new restaurant."
+    return render_template('newrestaurant.html')
 
 @app.route('/restaurant/<int:restaurant_id>/edit')
 def editRestaurant(restaurant_id):
-    return "Edit restaurant information."
+    return render_template('editrestaurant.html')
 
 @app.route('/restaurant/<int:restaurant_id>/delete')
 def deleteRestaurant(restaurant_id):
-    return "Delete restaurant information."
+    return render_template('deleterestaurant.html')
 
 @app.route('/restaurant/<int:restaurant_id>')
 @app.route('/restaurant/<int:restaurant_id>/menu')
 def showMenu(restaurant_id):
-    return "This is Menu Page."
+    return render_template('menu.html')
 
 @app.route('/restaurant/<int:restaurant_id>/menu/new')
 def newMenuItem(restaurant_id):
-    return "Add new menu item"
+    return render_template('newmenuitem.html')
 
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/edit')
 def editMenuItem(restaurant_id, menu_id):
-    return "Edit menu item"
+    return render_template('editmenuitem.html')
 
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/delete')
 def deleteMenuItem(restaurant_id, menu_id):
-    return "Delete menu item"
+    return render_template('deletemenuitem.html')
 
 
 if __name__ == '__main__':

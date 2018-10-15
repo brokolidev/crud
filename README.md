@@ -1,4 +1,4 @@
-# CRUD Initial code
+# python CRUD Initial code
 
 This is a simple script for understanding CRUD model.This project was created by using _python_ and _SQLLite3_.
 

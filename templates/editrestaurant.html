@@ -2,21 +2,17 @@
 
 <body>
 
-<h1>Restaurants - Edit Restaurant</h1>
+<h1>Restaurants - Edit {{restaurant.name}}</h1>
 
 <div>
 
-<p>Restaurant ID</p>
-<p>Restaurant Name</p>
-
 <form action="#" method="post">
-    <p>Restaurant Name:</p>
-    <input type="text" name="name" size="30" value="" placeholder="Restaurant Name">
-
+    <p>Edit this restaurant name:</p>
+    <input type="text" name="name" size="30" value="{{restaurant.name}}">
     <input type="submit" value="Edit">
 </form>
 
-<p><a href="#">Cancel</a></p>
+<p><a href="/">Cancel</a></p>
 
 </div>
 
